@@ -4,7 +4,7 @@ Start the application
 There is one menu heading for each operation.
 
 To operate as a admin use these credentials:
-email: test@test.com
+email: test2@test.com
 Password: Test1!
 
 To operate as Operator create a new user
