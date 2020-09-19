@@ -1,0 +1,28 @@
+﻿@model TEST.ViewModel.AppViewModel
+
+<html>
+<head>
+    <title>App Form</title>
+</head>
+<body>
+    <form method="post">
+        <fieldset>
+            <legend>Update App</legend>
+
+            @if (Model.AppDataList != null)
+            {
+                foreach (var item in Model.AppDataList)
+                {
+
+                    <div>
+                        <label for="Name">App:</label>
+                        <input type="text" name="@item.id" value="@item.name" required />
+                        <input type="text" name="webAddress" disabled="disabled" value="@item.chrome_web_origin" required />
+                        <input type="submit" name="response" value="Update App Name" formaction=@Url.Action("UpdateApp",  new { id = item.id, webAddress = item.chrome_web_origin }) formmethod="post" class="btn btn-primary" />
+                    </div>
+                }
+            }
+        </fieldset>
+    </form>
+</body>
+</html>

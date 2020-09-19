@@ -1,0 +1,39 @@
+﻿@model TEST.ViewModel.AppViewModel
+
+<html>
+<head>
+    <title>App Form</title>
+</head>
+<body>
+    <form method="post">
+        <fieldset>
+            <legend>View Apps</legend>
+            <table>
+                <thead>
+                    <tr>
+                        <th>App Name</th>
+                        <th>Web Address</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @if (Model.AppDataList != null)
+                    {
+                        foreach (var item in Model.AppDataList)
+                        {
+                            <tr>
+                                <td>@item.name</td>
+                                <td>@item.chrome_web_origin</td>
+                            </tr>
+
+                        }
+                    }
+                </tbody>
+            </table>
+            <input type="submit" name="response" value="View Apps" formaction=@Url.Action("ViewApps") formmethod="post" class="btn btn-primary" />
+        </fieldset>
+    </form>
+</body>
+</html>
+

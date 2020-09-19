@@ -1,0 +1,32 @@
+﻿@model TEST.ViewModel.AppViewModel
+
+<html>
+<head>
+    <title>App Form</title>
+</head>
+<body>
+    <form method="post">
+        <fieldset>
+            <legend>Create App</legend>
+            <div>
+                <label for="Name">App name:</label>
+                <input type="text" name="name" value="" required />
+            </div>
+            <div>
+                <label for="WebOrigin">Web Address</label>
+                <input type="url" name="chrome_web_origin" value="" required />
+            </div>
+            <div>
+                <label>&nbsp;</label>
+                <input type="submit" name="response" value="Create App" formaction=@Url.Action("CreateApp") formmethod="post" class="btn btn-primary" />
+            </div>
+            <div>
+            </div>
+        </fieldset>
+    </form>
+    @if (!string.IsNullOrEmpty(Model.SuccessMessage))
+    {
+        <label for="Success" class="label label-success">@Model.SuccessMessage</label>
+    }
+</body>
+</html>
